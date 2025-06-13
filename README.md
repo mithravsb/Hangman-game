@@ -1,11 +1,7 @@
-# Hangman-game
-
-import random
-
-# List of possible words
+import randam
 word_list = ["python", "hangman", "challenge", "programming", "developer", "artificial", "intelligence"]
 
-# Choose a random word from the list
+
 word = random.choice(word_list)
 word_letters = set(word)
 guessed_letters = set()
@@ -17,7 +13,7 @@ while len(word_letters) > 0 and lives > 0:
     print(f"\nYou have {lives} lives left.")
     print("Guessed letters: ", " ".join(sorted(guessed_letters)))
     
-    # Display current word progress
+    
     word_display = [letter if letter in guessed_letters else '_' for letter in word]
     print("Word: ", " ".join(word_display))
 
@@ -34,7 +30,6 @@ while len(word_letters) > 0 and lives > 0:
         lives -= 1
         print("Wrong guess.")
 
-# Final result
 if lives == 0:
     print(f"\nGame Over! The word was '{word}'.")
 else:
